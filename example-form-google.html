@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Contacto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #respuesta {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <form id="miFormulario">
+    <h2>Contáctanos</h2>
+    
+    <label>Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <div id="errorNombre" class="error"></div>
+
+    <label>Email:</label>
+    <input type="email" name="email" id="email" required>
+    <div id="errorEmail" class="error"></div>
+
+    <label>Mensaje:</label>
+    <textarea name="mensaje" id="mensaje" required></textarea>
+    <div id="errorMensaje" class="error"></div>
+
+    <button type="submit">Enviar</button>
+    <p id="respuesta"></p>
+  </form>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/XXXX/exec"; // pega aquí tu URL
+    const form = document.getElementById("miFormulario");
+    const respuesta = document.getElementById("respuesta");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      // Limpiar errores previos
+      document.querySelectorAll(".error").forEach(el => el.innerText = "");
+
+      // Validaciones básicas
+      let valido = true;
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      if (nombre.length < 2) {
+        document.getElementById("errorNombre").innerText = "El nombre debe tener al menos 2 caracteres.";
+        valido = false;
+      }
+      const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("errorEmail").innerText = "Introduce un email válido.";
+        valido = false;
+      }
+      if (mensaje.length < 5) {
+        document.getElementById("errorMensaje").innerText = "El mensaje debe tener al menos 5 caracteres.";
+        valido = false;
+      }
+
+      if (!valido) return;
+
+      // Enviar a Google Sheets
+      const data = { nombre, email, mensaje };
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => res.text())
+      .then(msg => {
+        respuesta.style.color = "green";
+        respuesta.innerText = "✅ ¡Mensaje enviado correctamente!";
+        form.reset();
+      })
+      .catch(err => {
+        respuesta.style.color = "red";
+        respuesta.innerText = "❌ Error al enviar. Intenta de nuevo.";
+      });
+    });
+  </script>
+</body>
+</html>

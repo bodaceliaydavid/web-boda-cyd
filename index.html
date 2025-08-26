@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Boda de Celia & David</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- Open Graph (para compartir en redes sociales) -->
+    <meta property="og:title" content="La Boda de Celia y David">
+    <meta property="og:description" content="La Boda de Celia y David 06/12/2025">
+    <meta property="og:image" content="img/main.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.labodadeceliaydavid.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body class="d-flex align-items-center justify-content-center text-center">
+
+    <!-- Audio -->
+    <audio id="raule" src="audio/RAULE-Ninfomano.mp3" autoplay loop></audio>
+
+    <!-- Botón Play/Pause -->
+    <button id="btn-audio" class="btn btn-light position-fixed" style="bottom: 20px; right: 20px; z-index: 1000;">
+        <i class="fa-solid fa-circle-play"></i>
+    </button>
+
+    <h1 id="signal" class="fw-bold" style="letter-spacing: 0.8rem; font-size: 3.5rem;">C|D</h1>
+
+    <section>
+        <div class="content">
+            
+            <h2 class="fw-bold">CELIA<span class="titulo-autography"> & </span>DAVID</h2>
+
+            <div class="pt-2 pb-5">
+                <img src="img/main-02.jpg" class="img-borde-difuminado" style="height: 180px;"/>
+            </div>
+
+            <h1 class="display-3 fw-bold">Próximamente...</h1>
+
+            <p class="lead">¡Ya queda muy poco!</p>
+            
+            <!-- Contador -->
+            <div id="countdown" class="d-flex justify-content-center gap-4 mt-4 fs-4 fw-bold"></div>
+
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
