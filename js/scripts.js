@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Formulario
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyCVPR2nJFn3H9oX1fW7W5npIcqiLwP_aBzURynkCACjt8DsPID0Xnx31hVVTe18priPQ/exec"
+    const scriptURL = "https://script.google.com/macros/s/AKfycbytAap2FWutOpHtgHadfZ3iOURzoOYujGkqW-PAuQ9IsVljzRkahBn2PiidL9NDHLeQEw/exec"
     const form = document.getElementById("myRVSP");    
 
     form.addEventListener("submit", e => {
