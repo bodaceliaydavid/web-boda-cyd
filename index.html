@@ -27,39 +27,167 @@
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
-<body class="d-flex align-items-center justify-content-center text-center">
+<body>
+    <div class="mx-auto mw-600">
 
-    <!-- Audio -->
-    <audio id="raule" src="audio/RAULE-Ninfomano.mp3" autoplay loop></audio>
-
-    <!-- Botón Play/Pause -->
-    <button id="btn-audio" class="btn btn-light position-fixed" style="bottom: 20px; right: 20px; z-index: 1000;">
-        <i class="fa-solid fa-circle-play"></i>
-    </button>
-
-    <h1 id="signal" class="fw-bold" style="letter-spacing: 0.8rem; font-size: 3.5rem;">C|D</h1>
-
-    <section>
-        <div class="content">
-            
-            <h2 class="fw-bold">CELIA<span class="titulo-autography"> & </span>DAVID</h2>
-
-            <div class="pt-2 pb-5">
-                <img src="img/main-02.jpg" class="img-borde-difuminado" style="height: 180px;"/>
+        <nav class="navbar pb-3">
+            <div class="container">
+                <h1 class="signal">C|D</h1>
+                <a class="rsvp-btn" href="#form-rsvp"><i class="fa-solid fa-clipboard-check"></i> Confirma</a>            
             </div>
+        </nav>
 
-            <h1 class="display-3 fw-bold">Próximamente...</h1>
+        <!-- Intro -->
+        <section id="init" class="mb-5">
+            <div class="d-flex flex-column align-items-center">                            
+                <div class="date-column">
+                    <p>06</p>
+                    <p>DIC</p>
+                    <p>25</p>
+                </div>
+                <h2 class="titulo2-autography my-2">Celia<span class="color-secondary"> & </span>David</h2>
+                <div class="py-3">
+                    <img src="img/main-02.jpg" class="w-100"/>
+                </div> 
+                <div class="container my-3">
+                    <div class="row justify-content-center">
+                                                   
+                            <h4 class="fw-bold text-center mb-2">Reproduce la canción</h3>  
+                            <audio controls class="w-100">
+                                <source src="audio/RAULE-Ninfomano.mp3" type="audio/mpeg">
+                                Tu navegador no soporta audio en HTML5.
+                            </audio>                               
+                       
+                    </div>
+                </div>
+          
+            </div>
+        </section>
+        
+        <!-- Contador -->
+        <section id="counter" class="mb-5">
+            <div class="container">
+                <h2 class="fw-bold text-center">PREPÁRATE</h2>              
+                <h4 class="fw-bold text-center">Ya queda muy poco...</h3>             
+                <!--<div id="countdown" class="d-flex justify-content-center gap-4 mt-4 fs-4 fw-bold"></div>-->
+                <div id="countdown"></div>
+            </div>        
+        </section>
 
-            <p class="lead">¡Ya queda muy poco!</p>
-            
-            <!-- Contador -->
-            <div id="countdown" class="d-flex justify-content-center gap-4 mt-4 fs-4 fw-bold"></div>
+        <!-- Ubicaciones -->
+        <section id="ubicaciones" class="mb-5">
+            <div class="container">
+                <h2 class="fw-bold text-center">Ceremonia y Celebración</h2>
+            </div>
+        </section>
 
+        <!-- Itinerario -->
+        <section id="itinerario" class="mb-5">
+            <div class="container">
+                <h2 class="fw-bold text-center">Itinerario</h2>
+            </div>
+        </section>
+
+        <!-- Formulario -->
+        <section id="form-rsvp" class="mb-5 pb-5">
+            <div class="container">
+                <h3 class="fw-bold text-center">Confirma tu asistencia</h4>
+                <p class="text-center">¡Ojalá podamos contar contigo en este día tan especial!</p>
+
+                <form id="myRVSP" class="px-4">                                        
+                    <!-- ¿Asiste? -->
+                    <div class="mb-3">
+                        <label for="asistencia" class="form-label">¿Asistirás?</label>
+                        <select class="form-select" id="asistencia" name="asistencia">
+                            <option selected disabled>Selecciona una opción</option>
+                            <option value="si">¡Claro que sí!</option>
+                            <option value="no">No podré asistir</option>
+                        </select>
+                        <div id="errorAsistencia" class="error-text"></div>
+                    </div>                    
+                    <!-- Nombre y apellidos -->
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre y apellidos</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+                        <div id="errorNombre" class="error-text"></div>
+                    </div>
+                    <!-- Nº asistentes -->
+                    <div class="mb-3">
+                        <label for="qty" class="form-label">Número de asistentes</label>
+                        <input type="number" class="form-control" id="qty" name="qty" placeholder="">
+                        <div id="errorQty" class="error-text"></div>
+                    </div>
+                    <!-- Transporte -->
+                    <div class="mb-3">
+                        <label for="bus" class="form-label">¿Harás uso del bus?</label>
+                        <select class="form-select" id="bus" name="bus">
+                            <option selected disabled>Selecciona una opción</option>
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                        <div id="errorBus" class="error-text"></div>
+                    </div>
+                    <!-- Alergias -->
+                    <div class="mb-3">
+                        <label for="alergias" class="form-label">Intolerancias o alergias alimentarias</label>
+                        <textarea class="form-control" id="alergias" name="alergias" placeholder="" rows="3"></textarea>
+                        <div id="errorAlergias" class="error-text"></div>
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Déjanos un mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" placeholder="" rows="3"></textarea>
+                        <div id="errorMensaje" class="error-text"></div>
+                    </div>
+                    <!-- Botón -->
+                    <div class="d-grid col-6 offset-3">
+                        <button type="submit" class="btn rounded-pill btn-submit-form">Enviar</button>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- Navbar-->
+        <div class="navbar-page mw-600 px-4">
+            <nav class="d-flex justify-content-between py-2 px-4">
+                
+                <a href="#init">
+                    <i class="fa-solid fa-house"></i>
+                    Inicio
+                </a>
+
+                <a href="#init">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Ubicaciones
+                </a>
+
+                <a href="#init">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Itinerario
+                </a>
+
+                <a href="#form-rsvp">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    Formulario
+                </a>
+
+            </nav>
         </div>
-    </section>
+
+        <!-- Audio -->
+        <audio id="raule" src="audio/RAULE-Ninfomano.mp3" autoplay loop></audio>
+
+        <!-- Botón Play/Pause -->
+        <button id="btn-audio" class="btn btn-light" hidden>
+            <i class="fa-solid fa-circle-play"></i>
+        </button>
+
+    </div>
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/scripts.js"></script>
 
 </body>
