@@ -97,8 +97,7 @@ body {
     font-weight: 650;
     text-decoration: none;
     color: black;
-    border: 2px solid black;
-    padding: 4px;
+    border: 2px solid black;        
     border-radius: 10px;
 }
 
@@ -128,8 +127,9 @@ body {
 }
 
 .navbar-page nav{    
-    background-color: white;
     border-radius: 20px;
+    background: url(../img/bg.jpg) no-repeat center center / cover;
+    border: 1px dashed;
 }
 
 .navbar-page a {

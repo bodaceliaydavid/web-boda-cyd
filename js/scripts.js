@@ -77,8 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Enviar a Google Sheets
         const data = { nombre, qty, mensaje };
 
-        console.log(new FormData(form))
-
         fetch(scriptURL, {
             method: "POST",
             //body: JSON.stringify(data)
