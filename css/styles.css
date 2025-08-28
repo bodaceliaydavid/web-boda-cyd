@@ -21,6 +21,13 @@ body {
     position: relative;
     font-family: 'Cormorant Garamond', serif;
     display: flex;
+    flex-direction: column;
+}
+
+footer {
+    display: flex;
+    border-top: 1px dashed black;
+    justify-content: center;
 }
 
 /* Oscurece un poco el fondo para mejor contraste */
@@ -65,15 +72,19 @@ body {
     z-index: 1000;
 }
 
-.titulo-autography{
+.titulo-autography {
     font-family: 'Autography', serif;
     font-size: 24px;
     color: #661A32;
 }
 
-.titulo2-autography{
+.titulo2-autography {
     font-family: 'Autography', serif;
     font-size: 24px;    
+}
+
+.tipo-autography {
+    font-family: 'Autography', serif;
 }
 
 .signal {
@@ -91,6 +102,11 @@ body {
     color: #661A32;
 }
 
+#myRVSP .form-select:focus  {
+    border: none;
+
+}
+
 .rsvp-btn {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
@@ -99,6 +115,8 @@ body {
     color: black;
     border: 2px solid black;        
     border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .mw-600 {
@@ -145,4 +163,28 @@ body {
     color: black;        
     padding: 10px 20px;
     transition: 0.3s;
+}
+
+#ubicaciones .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ubicaciones .container p {
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+}
+
+#ubicaciones .container a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+    border: 1px dashed black;        
+    border-radius: 10px;
+    display: flex;
+    align-items: center;    
 }
