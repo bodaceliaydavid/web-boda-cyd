@@ -9,8 +9,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <!-- Open Graph (para compartir en redes sociales) -->
-    <meta property="og:title" content="La Boda de Celia y David">
-    <meta property="og:description" content="La Boda de Celia y David 06/12/2025">
+    <meta property="og:title" content="La Boda de Celia & David 06.12.2025">
     <meta property="og:image" content="https://www.labodadeceliaydavid.com/img/og-main.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="688">
@@ -36,6 +35,10 @@
     <main class="mx-auto mw-600">        
         <div>
 
+            <div class="loader-overlay" style="display: none;">
+                <div class="loader"></div>
+            </div>
+
             <nav class="navbar pb-3">
                 <div class="container">
                     <h1 class="signal">C|D</h1>
@@ -53,7 +56,7 @@
                     </div>
                     <h2 class="titulo2-autography my-2">Celia<span class="color-secondary"> & </span>David</h2>
                     <div class="py-3">
-                        <img src="img/main-03.jpg" class="w-100"/>
+                        <img src="img/cyd_01.png" class="w-100"/>
                     </div> 
                     <div class="container my-3">
                         <div class="row justify-content-center">                                                   
@@ -88,14 +91,14 @@
             <!-- Ceremonia y celebración -->
             <section id="ubicaciones" class="mb-5">
                 <div class="container mb-5">                    
-                    <h3><i class="material-symbols-outlined">church</i></h3>
+                    <img src="img/icons/iglesia.png" class="w-icons"/>
                     <h2 class="fw-bold text-center">Ceremonia</h2>
                     <p>Parroquia de Nuestra Señora de los Dolores</p>
                     <p>Plaza Santo Domingo de Guzmán, SN, 18125 Ventas de Zafarraya, Granada</p>
                     <a href="https://maps.app.goo.gl/xoTHf5HosMPwWRgg7" target="_blank" class="p-1 mt-2"><i class="material-symbols-outlined">map</i> Abrir en Google Maps</a>
                 </div>
                 <div class="container">
-                    <h3><i class="material-symbols-outlined">celebration</i></h3>
+                    <img src="img/icons/comida.png" class="w-icons"/>
                     <h2 class="fw-bold text-center">Celebración</h2>
                     <p>B bou Hotel La Viñuela & Spa</p>
                     <p>Carretera de Vélez a Alhama, SN, 29712, Diseminado Diseminados, 16, 29713, Málaga</p>
@@ -104,18 +107,37 @@
             </section>
 
             <!-- Itinerario -->
-            <section id="itinerario" class="mb-5">
+            <section id="itinerario" class="mb-5 pt-2">
                 <div class="container d-flex align-items-center flex-column">
                     <h2 class="fw-bold text-center">Itinerario</h2>
-
-                    <img src="img/timeline.jpg" class="fw">
-
+                    <img src="img/timeline.png" class="w-itinerario">
                 </div>
             </section>
 
             <section id="info-bus" class="mb-5">
                 <div class="container">
-                    <h2 class="fw-bold text-center">Info Buses</h2>
+                    <img src="img/icons/bus.png" class="w-icons"/>
+                    <h2 class="fw-bold text-center">Info Autobuses</h2>
+                    <p class="text-center">Para vuestra tranquilidad, como sabemos que no os gusta mucho bajar <span class="fst-italic">"las revueltas"</span>, y menos subirlas, contaremos con servicio de autobuses. ¡¡Olvidaros de conducir y disfrutad!!</p>
+                    <div>
+                        <h5 class="color-secondary fw-bold text-center">Ida</h5>
+                        <ul>
+                            <li>
+                                Desde <span class="fw-bold">Alhama de Granada</span>, salida a las <span class="fw-bold"> 11:00 hrs.</span> desde la <span class="fw-bold"> Plaza Duque de Mandas</span> (las banderas)
+                            </li>
+                            <li>
+                                Desde <span class="fw-bold">Ventas de Zafarraya</span> justo al finalizar la ceremonia. <span class="fw-bold"> 13:45 hrs. aprox</span>
+                            </li>
+                        </ul>
+                        <h5 class="color-secondary fw-bold text-center">Vuelta</h5>
+                        <ul>
+                            <li>
+                                <span class="fw-bold">Fin de fiesta 00:00 hrs aprox</span> tanto para Alhama de Granada como para Ventas de Zafarraya porque aquí mueve el esqueleto todo el mundo hasta el final.
+                            </li>
+                        </ul>
+                        <p><span class="fw-bold">¡Ojo!</span> Recuerda reservar con antelación tu plaza en el autobús para no quedarte fuera y que nos podamos organizar con tiempo.</p>
+                        <p></p>
+                    </div>
                 </div>
             </section>
 
@@ -127,7 +149,7 @@
                         <!-- Celia -->
                         <div>
                             <a href="tel:+34666277434"><i class="material-symbols-outlined color-secondary">call</i> Llamar a Celia</a>
-                            <a href="https://wa.me/34666277434?text=Hola%20Celia.%20Tengo%20una%duda" target="_blank"><i class="fa-brands fa-whatsapp ws"></i> Mensaje a Celia</a>
+                            <a href="https://wa.me/34666277434?text=Hola%20Celia.%20Tengo%20una%20duda" target="_blank"><i class="fa-brands fa-whatsapp ws"></i> Mensaje a Celia</a>
                         </div>
                         <!-- David -->
                         <div>
@@ -149,50 +171,71 @@
                         <div class="mb-3">
                             <label for="asistencia" class="form-label">¿Asistirás?</label>
                             <select class="form-select" id="asistencia" name="asistencia">
-                                <option selected disabled>Selecciona una opción</option>
+                                <option value="" selected disabled>Selecciona una opción</option>
                                 <option value="si">¡Claro que sí!</option>
                                 <option value="no">No podré asistir</option>
                             </select>
                             <div id="errorAsistencia" class="error-text"></div>
-                        </div>                    
+                        </div>     
+
                         <!-- Nombre y apellidos -->
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre y apellidos</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
                             <div id="errorNombre" class="error-text"></div>
                         </div>
+
                         <!-- Nº asistentes -->
                         <div class="mb-3">
-                            <label for="qty" class="form-label">Número de asistentes</label>
-                            <input type="number" class="form-control" id="qty" name="qty" placeholder="">
-                            <div id="errorQty" class="error-text"></div>
+                            <label for="adultos" class="form-label">Número de asistentes</label>
+                            <div class="d-flex">
+                                <div class="fw">                                                                    
+                                    <input type="number" class="form-control" id="adultos" name="adultos" placeholder="Adultos">                                    
+                                </div>
+                                <div class="fw mx-4">                                
+                                    <input type="number" class="form-control" id="menores" name="menores" placeholder="Niños">                                    
+                                </div>
+                            </div>
+                            <div id="errorQtyAdultos" class="error-text"></div>                            
                         </div>
+
+                        <!-- Nombre asistentes -->
+                        <div class="mb-3">
+                            <label for="asistentes" class="form-label">Nombre de los asistentes</label>
+                            <textarea class="form-control" id="asistentes" name="asistentes" placeholder="Nombra a todos los asistentes incluyéndote a ti." rows="2"></textarea>
+                            <div id="errorAsistentes" class="error-text"></div>
+                        </div>
+
                         <!-- Transporte -->
                         <div class="mb-3">
                             <label for="bus" class="form-label">¿Harás uso del bus?</label>
                             <select class="form-select" id="bus" name="bus">
-                                <option selected disabled>Selecciona una opción</option>
+                                <option value="" selected disabled>Selecciona una opción</option>
                                 <option value="si">Sí</option>
                                 <option value="no">No</option>
                             </select>
                             <div id="errorBus" class="error-text"></div>
                         </div>
+
                         <!-- Alergias -->
                         <div class="mb-3">
                             <label for="alergias" class="form-label">Intolerancias o alergias alimentarias</label>
-                            <textarea class="form-control" id="alergias" name="alergias" placeholder="" rows="3"></textarea>
+                            <textarea class="form-control" id="alergias" name="alergias" placeholder="Si algunos de los asistentes tiene alguna intolerancia o alergia alimentaria es importante que las describas al detalle." rows="2"></textarea>
                             <div id="errorAlergias" class="error-text"></div>
                         </div>
+
                         <!-- Mensaje -->
                         <div class="mb-3">
                             <label for="mensaje" class="form-label">Déjanos un mensaje</label>
-                            <textarea class="form-control" id="mensaje" name="mensaje" placeholder="" rows="3"></textarea>
+                            <textarea class="form-control" id="mensaje" name="mensaje" placeholder="" rows="2"></textarea>
                             <div id="errorMensaje" class="error-text"></div>
                         </div>
-                        <!-- Botón -->
+
+                        <!-- Button -->
                         <div class="d-grid col-6 offset-3">
                             <button type="submit" class="btn rounded-pill btn-submit-form">Enviar</button>
                         </div>
+
                     </form>
 
                 </div>
@@ -200,26 +243,36 @@
 
             <!-- Navbar-->
             <div class="navbar-page mw-600 px-4">
-                <nav class="d-flex justify-content-between py-1 px-3">
+                <nav class="d-flex justify-content-between py-2 px-3">
                     
                     <a href="#init">
                         <i class="material-symbols-outlined">home</i>
-                        Inicio
+                        <!--Inicio-->
                     </a>
 
                     <a href="#ubicaciones">
                         <i class="material-symbols-outlined">location_on</i>
-                        Ubicaciones
+                        <!--Ubicaciones-->
                     </a>
 
-                    <a href="#itinerario">
+                    <a href="#itinerario" >
                         <i class="material-symbols-outlined">event_list</i>
-                        Itinerario
+                        <!--Itinerario-->
+                    </a>
+
+                    <a href="#info-bus">
+                        <i class="material-symbols-outlined">directions_bus</i>
+                        <!--Autobuses-->
+                    </a>
+
+                    <a href="#dudas">
+                        <i class="material-symbols-outlined">help</i>
+                        <!--Dudas-->
                     </a>
 
                     <a href="#form-rsvp">
                         <i class="material-symbols-outlined">calendar_add_on</i>
-                        Formulario
+                        <!--Asistencia-->
                     </a>
 
                 </nav>
