@@ -74,19 +74,23 @@ document.addEventListener("DOMContentLoaded", () => {
             valido = false;
         }
 
-        if (qty.length < 1) {
-            document.getElementById("errorQtyAdultos").innerText = "Indica cuántos adultos seréis.";
-            valido = false;
-        }
+        if (asistencia === "si") {
 
-        if (nombre_asistentes.length < 1) {
-            document.getElementById("errorAsistentes").innerText = "Indica el nombre de todos los asistentes.";
-            valido = false;
-        }
+            if (qty.length < 1) {
+                document.getElementById("errorQtyAdultos").innerText = "Indica cuántos adultos seréis.";
+                valido = false;
+            }
 
-        if (bus.length < 1) {
-            document.getElementById("errorBus").innerText = "Indica si haréis uso del bus.";
-            valido = false;
+            if (nombre_asistentes.length < 1) {
+                document.getElementById("errorAsistentes").innerText = "Indica el nombre de todos los asistentes.";
+                valido = false;
+            }
+
+            if (bus.length < 1) {
+                document.getElementById("errorBus").innerText = "Indica si haréis uso del bus.";
+                valido = false;
+            }
+
         }
 
         if (!valido) return;
